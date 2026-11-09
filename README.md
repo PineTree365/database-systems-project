@@ -1,0 +1,65 @@
+# CSC370 — TSX Financial Database Project
+
+This project aims to build a relational database for financial information about major companies listed on the Toronto Stock Exchange (TSX).
+
+## 1.1 — Initial Project Direction
+
+**Goal:** Develop a database for organizing and analyzing company financial information.
+
+- Discussed the project scope and possible database applications.
+- Decided to focus on approximately 60 major TSX-listed companies.
+- Identified company information, stock prices, and financial statements as potential data sources.
+- Prioritized basic financial analysis, including financial stability, profitability, and growth.
+- Decided to focus on data collection and database structure before considering additional analytical features.
+
+**AI Usage:** ChatGPT was used to discuss project ideas, evaluate the feasibility of collecting financial data, and explore possible database structures. The project direction was determined through discussions between the student and AI.
+
+## 1.2 — Initial Data Collection Test
+
+**Goal:** Verify that financial data can be collected successfully and identify which information is available for database design.
+
+- Developed a Python script using `yfinance` to retrieve data from Yahoo Finance.
+- Tested data collection using 10 TSX-listed companies.
+- Collected company information, daily stock prices, and annual financial statement data.
+- Organized the results into CSV files.
+- Examined missing financial information to understand data availability and limitations.
+
+**Results:**
+- `companies.csv`: 10 records
+- `daily_prices.csv`: 230 records
+- `annual_financials.csv`: 47 records
+- `data_issues.csv`: 49 missing-data records
+
+**AI Usage:** ChatGPT generated the Python data collection script, suggested the CSV structure, and helped interpret the results. The student configured the development environment, executed the script, inspected the collected data, and reviewed the missing-data issues.
+
+**Status:** Initial data collection test completed. The database schema and ERD have not yet been finalized.
+
+### 1.2.1 — Data Management Decisions
+
+**Purpose:** Establish the initial database direction based on the successful data collection test.
+
+#### Data Source and Stock Prices
+- Yahoo Finance will be used as the primary financial data source through the Python `yfinance` library.
+- The data collection script is located at `scripts/fetch_tsx.py`.
+- Although Yahoo Finance provides frequently updated stock prices, this project will focus on **daily closing prices** to examine historical stock trends rather than track real-time market movements.
+- The target historical stock price period is **5 years**.
+- The initial test confirmed that financial data can be retrieved and organized. The collection process will be expanded after the database structure is established.
+
+#### Initial Database Structure
+The database will initially contain three entities:
+
+1. **Company** — Stores company names, Yahoo Finance tickers, and basic company information.
+2. **DailyPrice** — Stores historical daily stock prices and trading volumes.
+3. **AnnualFinancial** — Stores annual financial information for evaluating company performance and financial stability.
+
+The project will initially target approximately 60 TSX-listed companies.
+
+Companies will be organized alphabetically by their Yahoo Finance ticker symbols. Each company will have an internal `company_id`, while the ticker will serve as a unique stock identifier. Assigned company IDs will remain unchanged when additional companies are added.
+
+#### Future Considerations
+- Financial ratios such as P/E, P/B, and ROE may be calculated from stored financial data or compared with values provided by Yahoo Finance.
+- Additional analytical features and automated data updates may be considered later.
+- Detailed attributes, relationships, and constraints will be finalized during ERD and relational schema design.
+
+#### AI Usage
+ChatGPT was used to discuss data management options, compare real-time and daily stock price collection, and propose the initial three-entity structure. The student selected the daily closing price approach, five-year historical period, and initial database direction. The final ERD and SQL schema have not yet been implemented.
