@@ -104,3 +104,25 @@ Implemented the initial relational schema for the TSX Financial Database in MySQ
 - Used ChatGPT to explain primary keys, foreign keys, functional dependencies, and BCNF.
 - Used ChatGPT to draft the SQL DDL based on the selected database design.
 - Reviewed the schema and verified its implementation in MySQL.
+
+## 2.0 — Sprint 1: Relational Design & Implementation
+
+Sprint 1 focuses on validating the relational design of the TSX Financial Database and implementing it in MySQL.
+
+The initial five-table design is reviewed using functional dependencies (FDs), candidate keys, BCNF, and 4NF.
+
+## 2.1 — Relational Design Validation
+
+The normalization analysis identified the functional dependency `industry → sector` in the original Company relation. Since `industry` is not a superkey, this violates BCNF.
+
+To resolve this, the Industry relation was separated from Company, increasing the design from five to six tables.
+
+The revised design:
+
+- Satisfies BCNF under the identified functional dependencies.
+- Supports lossless join and dependency preservation.
+- Requires no further 4NF decomposition under the current business rules.
+
+Each company stores one representative industry, consistent with the data provided by Yahoo Finance. The design supports both sector-level and industry-level company comparisons.
+
+Detailed analysis: [Normalization and Relational Design Validation](docs/normalization.md).
