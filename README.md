@@ -145,3 +145,24 @@ Implemented and verified the revised six-table MySQL schema based on the BCNF de
 
 **AI Usage:**
 ChatGPT assisted with revising the SQL DDL, explaining schema recreation and migration, and preparing SQL queries to verify the resulting database structure. The student executed the SQL and reviewed the validation results.
+
+### 2.2.1 — Sprint 1 Progress Summary and Next Steps
+
+**Completed Work:**
+- Completed the relational design validation, including functional dependencies, BCNF, and 4NF.
+- Implemented the revised six-table MySQL schema.
+- Verified table creation and primary key, foreign key, unique, and CHECK constraints.
+- Previously tested financial data collection for 10 TSX-listed companies using Python and `yfinance`.
+
+**Remaining Work:**
+- Expand data collection to approximately 60 TSX-listed companies with five years of daily stock prices.
+- Load the collected company, stock price, and financial statement data into MySQL.
+- Validate the imported records, missing values, and data consistency.
+
+**Next Sprint Plan:**
+- Complete data collection, loading, and validation.
+- Develop SQL queries using joins, grouping, aggregation, and subqueries for financial analysis.
+- Explore query execution plans and indexing strategies, connecting the project to the Advanced SQL and Analysing Query Algorithms modules.
+
+**AI Usage:**
+ChatGPT assisted with reviewing project progress, identifying remaining implementation tasks, and organizing the next sprint plan. The student reviewed the completed MySQL schema and verified its constraints through SQL queries.
