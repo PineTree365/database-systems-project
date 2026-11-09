@@ -83,3 +83,24 @@ Created an initial conceptual ERD for the TSX Financial Database.
 ![Initial Conceptual ERD](docs/erd.svg)
 
 The ERD is an initial design and may be refined during relational schema development.git
+
+### 1.4 — Relational Schema and SQL Implementation
+
+Implemented the initial relational schema for the TSX Financial Database in MySQL.
+
+**Design Decisions:**
+- Used `company_id` as the primary key for `Company`.
+- Used composite primary keys (`company_id`, `trade_date`) for `DailyPrice` and (`company_id`, `fiscal_period_end`) for the three financial statement tables.
+- Defined foreign keys linking all four dependent tables to `Company`.
+- Reviewed functional dependencies and BCNF. Based on the current assumptions, the five tables satisfy BCNF without further decomposition.
+- Allowed `NULL` for unavailable financial values and added a non-negative price constraint.
+
+**Implementation:**
+- Created the five tables using `sql/schema.sql`.
+- Executed the SQL DDL in MySQL.
+- Verified the composite primary key, foreign key, and `CHECK` constraint on `DailyPrice`.
+
+**AI Usage:**
+- Used ChatGPT to explain primary keys, foreign keys, functional dependencies, and BCNF.
+- Used ChatGPT to draft the SQL DDL based on the selected database design.
+- Reviewed the schema and verified its implementation in MySQL.
