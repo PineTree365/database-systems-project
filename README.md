@@ -126,3 +126,22 @@ The revised design:
 Each company stores one representative industry, consistent with the data provided by Yahoo Finance. The design supports both sector-level and industry-level company comparisons.
 
 Detailed analysis: [Normalization and Relational Design Validation](docs/normalization.md).
+
+## 2.2 — MySQL Schema Implementation
+
+Implemented and verified the revised six-table MySQL schema based on the BCNF decomposition from Section 2.1.
+
+**Implementation:**
+- Added the `Industry` table with `industry` as its primary key and `sector` as an attribute.
+- Removed `sector` from `Company` and established a foreign key from `Company.industry` to `Industry.industry`.
+- Preserved the existing `DailyPrice`, `IncomeStatement`, `BalanceSheet`, and `CashFlowStatement` table definitions.
+- Maintained the data types and primary key, foreign key, unique, and CHECK constraints.
+
+**Validation:**
+- Confirmed that all six tables exist in MySQL.
+- Verified the `Company` and `Industry` table definitions.
+- Verified the composite primary key, foreign key, and non-negative price CHECK constraint in `DailyPrice`.
+- Confirmed that all three financial statement tables have primary key and foreign key constraints.
+
+**AI Usage:**
+ChatGPT assisted with revising the SQL DDL, explaining schema recreation and migration, and preparing SQL queries to verify the resulting database structure. The student executed the SQL and reviewed the validation results.

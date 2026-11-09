@@ -1,19 +1,29 @@
 
 -- CSC370 TSX Financial Database
--- Kick-off: Initial relational schema
--- AI assistance: ChatGPT helped draft the SQL
--- based on the project owner's design decisions.
+-- Sprint 1 - 2.2 MySQL Schema Implementation
+-- Revised schema with six tables following BCNF decomposition.
+-- AI assistance: ChatGPT helped revise the SQL DDL
+-- based on the normalization analysis and design decisions
+-- documented in docs/normalization.md.
 
 CREATE DATABASE IF NOT EXISTS tsx_financial;
 USE tsx_financial;
 
--- 1. Company
+-- 1. Industry
+CREATE TABLE Industry (
+    industry VARCHAR(150) PRIMARY KEY,
+    sector VARCHAR(100)
+);
+
+-- 2. Company
 CREATE TABLE Company (
     company_id INT AUTO_INCREMENT PRIMARY KEY,
     ticker VARCHAR(20) NOT NULL UNIQUE,
     company_name VARCHAR(200) NOT NULL,
-    sector VARCHAR(100),
-    industry VARCHAR(150)
+    industry VARCHAR(150),
+
+    FOREIGN KEY (industry)
+        REFERENCES Industry(industry)
 );
 
 -- 2. Daily Price
