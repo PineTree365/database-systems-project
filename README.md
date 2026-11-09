@@ -63,3 +63,23 @@ Companies will be organized alphabetically by their Yahoo Finance ticker symbols
 
 #### AI Usage
 ChatGPT was used to discuss data management options, compare real-time and daily stock price collection, and propose the initial three-entity structure. The student selected the daily closing price approach, five-year historical period, and initial database direction. The final ERD and SQL schema have not yet been implemented.
+### 1.3 — Initial Conceptual ERD
+
+Created an initial conceptual ERD for the TSX Financial Database.
+
+**Design Decisions:**
+- Defined five entities: `Company`, `DailyPrice`, `IncomeStatement`, `BalanceSheet`, and `CashFlowStatement`.
+- Established one-to-many relationships between `Company` and each of the other four entities.
+- Chose `company_id` as the primary identifier for companies, with an initial target of 60 major TSX stocks and the possibility of expanding to more companies later.
+- Focused on daily closing prices and annual financial statements.
+
+**AI Usage:**
+- Used ChatGPT to discuss entity selection, attributes, identifiers, and relationships.
+- Used ChatGPT to generate the initial Graphviz DOT code based on the design decisions.
+- Reviewed the generated ERD visually before committing it.
+
+**ERD:**
+
+![Initial Conceptual ERD](docs/erd.svg)
+
+The ERD is an initial design and may be refined during relational schema development.git

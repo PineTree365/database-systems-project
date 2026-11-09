@@ -1,0 +1,100 @@
+
+graph TSX_ERD {
+    graph [
+        layout=neato,
+        overlap=false,
+        splines=true,
+        sep=0.8
+    ];
+
+    node [fontname="Arial"];
+    edge [fontname="Arial"];
+
+    // Entities
+    Company [shape=box];
+    DailyPrice [shape=box];
+    IncomeStatement [shape=box];
+    BalanceSheet [shape=box];
+    CashFlowStatement [shape=box];
+
+    // Relationships
+    HasPrice [label="Has Price", shape=diamond];
+    HasIncome [label="Has Income", shape=diamond];
+    HasBalance [label="Has Balance", shape=diamond];
+    HasCashFlow [label="Has Cash Flow", shape=diamond];
+
+    Company -- HasPrice [label="1"];
+    HasPrice -- DailyPrice [label="N"];
+
+    Company -- HasIncome [label="1"];
+    HasIncome -- IncomeStatement [label="N"];
+
+    Company -- HasBalance [label="1"];
+    HasBalance -- BalanceSheet [label="N"];
+
+    Company -- HasCashFlow [label="1"];
+    HasCashFlow -- CashFlowStatement [label="N"];
+
+    // Company attributes
+    Company -- company_id;
+    Company -- ticker;
+    Company -- company_name;
+    Company -- sector;
+    Company -- industry;
+
+    company_id [shape=ellipse, label=<<U>company_id</U>>];
+    ticker [shape=ellipse];
+    company_name [shape=ellipse];
+    sector [shape=ellipse];
+    industry [shape=ellipse];
+
+    // DailyPrice attributes
+    DailyPrice -- trade_date;
+    DailyPrice -- close_price;
+    DailyPrice -- volume;
+
+    trade_date [shape=ellipse];
+    close_price [shape=ellipse];
+    volume [shape=ellipse];
+
+    // IncomeStatement attributes
+    IncomeStatement -- income_period_end;
+    IncomeStatement -- revenue;
+    IncomeStatement -- gross_profit;
+    IncomeStatement -- operating_income;
+    IncomeStatement -- net_income;
+
+    income_period_end [shape=ellipse, label="fiscal_period_end"];
+    revenue [shape=ellipse];
+    gross_profit [shape=ellipse];
+    operating_income [shape=ellipse];
+    net_income [shape=ellipse];
+
+    // BalanceSheet attributes
+    BalanceSheet -- balance_period_end;
+    BalanceSheet -- total_assets;
+    BalanceSheet -- total_liabilities;
+    BalanceSheet -- stockholders_equity;
+    BalanceSheet -- cash_and_equivalents;
+    BalanceSheet -- total_debt;
+
+    balance_period_end [shape=ellipse, label="fiscal_period_end"];
+    total_assets [shape=ellipse];
+    total_liabilities [shape=ellipse];
+    stockholders_equity [shape=ellipse];
+    cash_and_equivalents [shape=ellipse];
+    total_debt [shape=ellipse];
+
+    // CashFlowStatement attributes
+    CashFlowStatement -- cash_period_end;
+    CashFlowStatement -- operating_cash_flow;
+    CashFlowStatement -- investing_cash_flow;
+    CashFlowStatement -- financing_cash_flow;
+    CashFlowStatement -- capital_expenditure;
+
+    cash_period_end [shape=ellipse, label="fiscal_period_end"];
+    operating_cash_flow [shape=ellipse];
+    investing_cash_flow [shape=ellipse];
+    financing_cash_flow [shape=ellipse];
+    capital_expenditure [shape=ellipse];
+}
