@@ -1,0 +1,11 @@
+ticker,company_name,sector,industry,market_cap_snapshot,snapshot_date
+RY.TO,Royal Bank of Canada,Financial Services,Banks - Diversified,393399599104,2026-11-08
+TD.TO,The Toronto-Dominion Bank,Financial Services,Banks - Diversified,282381254656,2026-11-08
+BNS.TO,The Bank of Nova Scotia,Financial Services,Banks - Diversified,157625106432,2026-11-08
+SHOP.TO,Shopify Inc.,Technology,Software - Application,270774288384,2026-11-08
+ENB.TO,Enbridge Inc.,Energy,Oil & Gas Midstream,147418660864,2026-11-08
+CNR.TO,Canadian National Railway Company,Industrials,Railroads,105073434624,2026-11-08
+CP.TO,Canadian Pacific Kansas City Limited,Industrials,Railroads,113016029184,2026-11-08
+SU.TO,Suncor Energy Inc.,Energy,Oil & Gas Integrated,111783870464,2026-11-08
+BCE.TO,BCE Inc.,Communication Services,Telecom Services,28507314176,2026-11-08
+TRI.TO,Thomson Reuters Corporation,Industrials,Specialty Business Services,68854947840,2026-11-08
